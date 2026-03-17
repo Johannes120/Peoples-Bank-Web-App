@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People's Bank Dashboard</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="styles/dashboard.css">
+</head>
+
+<body>
+
+<!-- FIXED MENU BUTTON -->
+<button id="menuToggle" class="menu-btn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+        <a href="dashboard1.html">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+        <a href="savings.html">
+            <i class="fa-solid fa-piggy-bank"></i> Savings Planner
+        </a>
+        <a href="loan.html">
+            <i class="fa-solid fa-hand-holding-dollar"></i> Loan Calculator
+        </a>
+    </nav>
+
+    <!-- LOGOUT BUTTON -->
+    <div class="logout-container">
+        <button id="logoutBtn">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+    </div>
+</aside>
+
+<!-- MAIN DASHBOARD CONTENT -->
+<div class="dashboard-main">
+
+    <!-- HEADER -->
+    <header class="topbar">
+        <div class="logo">
+          
+        </div>
+        <h2 class="dashboard-title">People's | Bank</h2>
+    </header>
+
+    <main class="dashboard-container">
+
+        <!-- WELCOME SECTION -->
+        <section class="welcome-section">
+            <h1 id="welcomeMessage">Welcome to People's Bank</h1>
+            <p>
+                We are committed to helping you build strong financial habits.
+                Learn how to manage your money, save for future goals,
+                and make smarter financial decisions.
+            </p>
+        </section>
+
+        <!-- VIDEO SECTION -->
+        <section class="video-section">
+            <h2>Financial Literacy</h2>
+            <div class="video-container">
+            <video controls width="100%">
+            <source src="The-Number-One-Rule-of-Money.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+            <div class="video-description">
+                <p>
+                    This video introduces the fundamentals of financial literacy including
+                    saving money, avoiding unnecessary debt,budgetting and building
+                    long-term financial stability.
+                </p>
+            </div>
+        </section>
+
+        <!-- TOOL CARDS SECTION -->
+        <section class="tools-section">
+            <h2>Our Financial Tools</h2>
+            <div class="tools-cards">
+
+                <!-- SAVINGS CARD -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <h3>Savings Planner</h3>
+                    <p>
+                        The Savings Planner helps you set savings goals and determine
+                        how much money you need to save each month. Ideal for planning purchases,
+                        building emergency funds, and achieving long-term financial goals.
+                    </p>
+                    <a href="savings.html" class="tool-btn">Open Planner</a>
+                </div>
+
+                <!-- LOAN CARD -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3>Loan Calculator</h3>
+                    <p>
+                        The Loan Calculator helps you estimate monthly loan payments
+                        based on the loan amount, interest rate, and repayment period.
+                        Use it before applying for loans such as car financing or personal loans.
+                    </p>
+                    <a href="loan.html" class="tool-btn">Open Calculator</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+<footer class="footer-card">
+
+    <div class="footer-content">
+
+        <!-- LEFT -->
+        <div class="footer-left">
+            <i class="fa-brands fa-first-order-alt"></i>
+            <span>PB</span>
+        </div>
+
+        <!-- CENTER -->
+        <div class="footer-center">
+            <p>© 2025 People's Bank | Smart Banking for Everyone</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-right">
+
+            <a href="#" class="icon">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="#" class="icon">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="#" class="icon">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- JS -->
+<script src="scripts/dashboard.js"></script>
+</body>
+</html>
