@@ -1,0 +1,588 @@
+/* ================= GLOBAL ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+
+background:#f0f0f0;
+min-height:100vh;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+/* ============================= */
+/* SIDEBAR LOGOUT BUTTON */
+/* ============================= */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background: linear-gradient(145deg, #f6e7b9, #f3f3f3); /* matches dashboard topbar */
+    color: #1e2a38;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+.sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: #1e2a38;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.sidebar-nav a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar-nav a:hover {
+    background-color: #cfcfcd; /* gold hover to match tool cards */
+    color: #1e2a38;
+    border-radius: 8px;
+}
+
+/* Logout button container */
+.logout-container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Logout button styling */
+#logoutBtn {
+    width: 100%;
+    background-color:#c1a862; /* matches tool buttons */
+    color: #1e2a38;
+    border: none;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+#logoutBtn:hover {
+    background-color: #999793;
+    color:#fff;
+}
+/* ================= HEADER ================= */
+
+header{
+
+position:relative;
+
+width:100%;
+background:linear-gradient(145deg,#f6e7b9,#f3f3f3);
+
+padding:25px;
+
+text-align:center;
+
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+
+z-index:1;   
+
+}
+
+header h1{
+color:#333;
+font-weight:600;
+margin-top: 25px;
+}
+/* Menu Button */
+.menu-btn {
+
+position: fixed;
+
+top: 15px;
+left: 15px;
+
+background:#cccbc9;
+color:#333;
+
+border:none;
+padding:10px 12px;
+
+border-radius:6px;
+
+cursor:pointer;
+
+z-index:2000;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+
+display:block;
+
+}
+
+.menu-btn i{
+font-size:18px;
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+
+position:absolute;
+
+right:25px;
+top:18px;
+display:flex;
+align-items:center;
+gap:8px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+/* icon */
+.logo i{
+
+font-size:26px;
+
+color:#f5c84c;
+
+}
+
+/* PB text */
+
+.logo span{
+
+font-size:20px;
+
+color:#646464;
+
+letter-spacing:1px;
+
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+margin-top:40px;
+margin-bottom: 40px;
+
+background:linear-gradient(145deg,#f3f3f3,#f6e7b9);
+
+padding:40px;
+
+width:420px;
+
+border-radius:20px;
+
+box-shadow:0 25px 60px rgba(0,0,0,0.15);
+
+display:flex;
+flex-direction:column;
+
+}
+
+header h1{
+color:#646464;
+font-weight:600;
+margin-top:25px;
+}
+
+.container h2{
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#707070;
+
+}
+
+
+/* ================= INPUTS ================= */
+
+label{
+
+margin-top:15px;
+
+font-weight:500;
+
+color:#4a4a4a;   /* darker grey that matches the UI */
+
+}
+
+input{
+
+margin-top:8px;
+
+padding:8px 4px;
+
+border:none;
+border-bottom:2px solid #bdbdbd;   /* straight line */
+
+background:transparent;
+
+font-size:16px;
+
+outline:none;
+
+transition:0.3s;
+
+}
+
+input:focus{
+
+border-bottom:2px solid #f5c84c;   /* gold focus */
+
+}
+
+input{
+color:#4f4e4e;
+}
+/* ================= BUTTON ================= */
+
+.calculate-btn{
+
+margin-top:25px;
+
+padding:12px;
+
+border:none;
+
+border-radius:25px;
+
+background:#c1a862;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.calculate-btn:hover{
+
+background:#646464;
+color:#fff;
+
+}
+
+
+/* ================= RESULT ================= */
+
+.result{
+
+margin-top:25px;
+
+font-size:16px;
+
+color:#333;
+
+text-align:center;
+
+min-height:20px;
+
+}
+
+
+/* ================= PROGRESS BAR ================= */
+
+.progress-container{
+
+width:100%;
+
+height:25px;
+
+background:#ddd;
+
+border-radius:20px;
+
+margin-top:20px;
+overflow: hidden;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0%;
+
+background:#f5c84c;
+
+color:#333;
+
+font-weight:600;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:width 0.4s ease;
+
+}
+
+
+/* ================= FOOTER CARD ================= */
+
+.footer-card {
+
+    width: 95%;
+    max-width: 1100px;
+
+    background: #fff; /* white background */
+
+    margin: 40px auto;
+    padding: 20px 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+
+}
+
+/* FLEX CONTAINER */
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LEFT */
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.footer-left i {
+    font-size: 24px;
+    color: #f5c84c;
+}
+
+.footer-left span {
+    font-size: 18px;
+    color: #646464;
+}
+
+/* CENTER */
+.footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+/* RIGHT */
+.footer-right {
+    display: flex;
+    gap: 15px;
+}
+
+/* LOGO */
+
+.footer-logo {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-weight: 700;
+}
+
+.footer-logo i {
+
+    font-size: 24px;
+    color: #f5c84c;
+}
+
+.footer-logo span {
+
+    font-size: 18px;
+    color: #646464;
+}
+
+/* TEXT */
+
+.footer-text {
+
+    text-align: center;
+    flex: 1;
+
+    font-size: 14px;
+    color: #555;
+}
+
+/* ICONS */
+
+.footer-icons {
+
+    display: flex;
+    gap: 15px;
+}
+
+/* ICON STYLE */
+
+.icon {
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f0f0f0;
+    color: #333;
+
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+/* HOVER EFFECTS */
+
+.icon:hover {
+    background: #f5c84c;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* ========================= */
+/* TABLET RESPONSIVENESS */
+/* ========================= */
+
+@media (max-width:1024px){
+
+.footer-card{
+    width: 95%;
+    padding: 18px 20px;
+}
+
+/* Slightly smaller logo */
+.footer-left i{
+    font-size: 22px;
+}
+
+.footer-left span{
+    font-size: 16px;
+}
+
+/* Center text */
+.footer-center{
+    font-size: 13px;
+}
+
+/* Icons */
+.footer-right{
+    gap: 12px;
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+}
+
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVENESS */
+/* ========================= */
+
+@media(max-width:768px){
+
+.footer-content{
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+/* Remove absolute centering */
+.footer-center{
+    position: static;
+    transform: none;
+    text-align: center;
+}
+
+/* Center logo */
+.footer-left{
+    justify-content: center;
+}
+
+/* Center icons */
+.footer-right{
+    justify-content: center;
+}
+
+/* Reduce spacing */
+.footer-card{
+    padding: 15px;
+}
+
+}
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+
+@media(max-width:480px){
+
+.footer-left span{
+    font-size: 15px;
+}
+
+.footer-center{
+    font-size: 12px;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+}
+
+.footer-card{
+    border-radius: 15px;
+}
+
+}
