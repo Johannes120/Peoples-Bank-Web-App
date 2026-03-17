@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>People's Bank Savings Planner</title>
+
+<link rel="stylesheet" href="styles/savings.css">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- FIXED MENU BUTTON -->
+<button id="menuToggle" class="menu-btn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+        <a href="dashboard1.html">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+        <a href="savings.html">
+            <i class="fa-solid fa-piggy-bank"></i> Savings Planner
+        </a>
+        <a href="loan.html">
+            <i class="fa-solid fa-hand-holding-dollar"></i> Loan Calculator
+        </a>
+    </nav>
+
+    <!-- LOGOUT BUTTON -->
+    <div class="logout-container">
+        <button id="logoutBtn">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+    </div>
+</aside>
+
+<!-- MAIN PAGE CONTENT -->
+<header>
+
+<div class="logo">
+<i class="fa-brands fa-first-order-alt"></i>
+<span>PB</span>
+</div>
+
+<h1>Savings Goal Planner</h1>
+
+</header>
+
+
+<div class="container">
+
+<h2>Plan Your Savings</h2>
+
+<label for="goal">Savings Goal Amount (R)</label>
+<input type="number" id="goal" placeholder="e.g. 10000">
+
+<label for="months">Timeframe (months)</label>
+<input type="number" id="months" placeholder="e.g. 12">
+
+<label for="current">Current Savings (R)</label>
+<input type="number" id="current" placeholder="e.g. 3500">
+
+<button onclick="calculateSavings()" class="calculate-btn">
+Calculate Plan
+</button>
+
+<div class="result" id="result"></div>
+
+<div class="progress-container">
+<div class="progress-bar" id="progress-bar">0%</div>
+</div>
+
+</div>
+
+<footer class="footer-card">
+
+    <div class="footer-content">
+
+        <!-- LEFT -->
+        <div class="footer-left">
+            <i class="fa-brands fa-first-order-alt"></i>
+            <span>PB</span>
+        </div>
+
+        <!-- CENTER -->
+        <div class="footer-center">
+            <p>© 2025 People's Bank | Smart Banking for Everyone</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-right">
+
+            <a href="#" class="icon">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="#" class="icon">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="#" class="icon">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+<script src="scripts/savings.js"></script>
+
+</body>
+</html>
