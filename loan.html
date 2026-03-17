@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>People's Bank Loan Calculator</title>
+
+<link rel="stylesheet" href="styles/loan.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- FIXED MENU BUTTON -->
+<button id="menuToggle" class="menu-btn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+        <a href="dashboard1.html">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+        <a href="savings.html">
+            <i class="fa-solid fa-piggy-bank"></i> Savings Planner
+        </a>
+        <a href="loan.html">
+            <i class="fa-solid fa-hand-holding-dollar"></i> Loan Calculator
+        </a>
+    </nav>
+
+    <!-- LOGOUT BUTTON -->
+    <div class="logout-container">
+        <button id="logoutBtn">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+    </div>
+</aside>
+
+<!-- MAIN PAGE CONTENT -->
+<header>
+
+<div class="logo">
+<i class="fa-brands fa-first-order-alt"></i>
+<span>PB</span>
+</div>
+
+<h1>Loan Calculator</h1>
+
+</header>
+
+
+<main class="loan-wrapper">
+
+
+<!-- LOAN INPUT CARD -->
+
+<div class="loan-card">
+
+<h2>Calculate Your Loan</h2>
+
+<label>Loan Amount (R)</label>
+<input type="number" id="amount" placeholder="e.g. 10000">
+
+<label>Interest Rate (%)</label>
+<input type="number" id="rate" placeholder="e.g. 10">
+
+<label>Loan Term (Months)</label>
+<input type="number" id="months" placeholder="e.g. 12">
+
+<button onclick="calculateLoan()">Calculate Loan</button>
+
+</div>
+
+
+
+<!-- RESULT CARD -->
+
+<div class="result-card">
+
+<h2>Loan Summary</h2>
+
+<div class="result-item">
+<span>Monthly Payment</span>
+<strong id="monthly">R0</strong>
+</div>
+
+<div class="result-item">
+<span>Total Interest</span>
+<strong id="interest">R0</strong>
+</div>
+
+<div class="result-item">
+<span>Total Payment</span>
+<strong id="total">R0</strong>
+</div>
+
+</div>
+
+</main>
+
+<footer class="footer-card">
+
+    <div class="footer-content">
+
+        <!-- LEFT -->
+        <div class="footer-left">
+            <i class="fa-brands fa-first-order-alt"></i>
+            <span>PB</span>
+        </div>
+
+        <!-- CENTER -->
+        <div class="footer-center">
+            <p>© 2025 People's Bank | Smart Banking for Everyone</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-right">
+
+            <a href="#" class="icon">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="#" class="icon">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="#" class="icon">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="scripts/loan.js"></script>
+
+</body>
+</html>
