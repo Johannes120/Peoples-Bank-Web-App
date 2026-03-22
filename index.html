@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Peoples Banking</title>
+<title>Peoples Banking | Auth</title>
 
 <!-- Font Awesome CDN -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- External CSS -->
 <link rel="stylesheet" href="styles/styles.css">
 
 </head>
-
 <body>
-    
-<div id="customAlert" class="alert"> </div>
+
+<div id="customAlert" class="alert"></div>
 
 <!-- LOGO -->
 <div class="logo">
@@ -39,22 +35,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         <h1>Open Your Account</h1>
         <form>
             <div class="input-group">
-                <input type="username" required>
-                <label>Username</label>
+                <input type="email" id="signupEmail" required>
+                <label>Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="signupPassword" required>
+                <label>Password</label>
+                <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword('signupPassword', this)"></i>
             </div>
             <div class="input-group">
                 <input type="password" id="confirmPassword" required>
                 <label>Confirm Password</label>
                 <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword('confirmPassword', this)"></i>
             </div>
-            <div class="input-group">
-                <input type="password" id="password" required>
-                <label>Password</label>
-                <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword('password', this)"></i>
-            </div>
-            <button class="submit-btn">
-                Create Account <span class="arrow">&#8594;</span> 
-            </button>
+            <button class="submit-btn">Create Account <span class="arrow">&#8594;</span></button>
         </form>
     </div>
 
@@ -63,17 +57,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         <h1>Access Account</h1>
         <form>
             <div class="input-group">
-                <input type="username" required>
-                <label>Username</label>
+                <input type="email" id="signinEmail" required>
+                <label>Email</label>
             </div>
             <div class="input-group">
                 <input type="password" id="loginPassword" required>
                 <label>Password</label>
                 <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword('loginPassword', this)"></i>
             </div>
-            <button class="submit-btn">
-                Login <span class="arrow">&#8594;</span> 
-            </button>
+            <button class="submit-btn">Login <span class="arrow">&#8594;</span></button>
         </form>
     </div>
 
@@ -95,7 +87,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     <button onclick="closePopup()">Close</button>
 </div>
 
-<script src="scripts/script.js"></script>
+<!-- Firebase + JS -->
+<script type="module" src="scripts/auth.js"></script>
 
 </body>
 </html>
