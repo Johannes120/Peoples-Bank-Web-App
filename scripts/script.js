@@ -72,7 +72,7 @@ document.querySelector("#signupForm form").addEventListener("submit", (e)=>{
 
     createUserWithEmailAndPassword(auth,email,password)
     .then(()=>{ showAlert("Account created successfully!", "success"); signinBtn.click(); })
-    .catch(err=>showAlert(err.message,"error"));
+    .catch(err=>showAlert("Account Already Exists","error"));
 });
 
 // SIGN IN
