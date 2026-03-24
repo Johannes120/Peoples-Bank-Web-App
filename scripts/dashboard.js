@@ -1,13 +1,12 @@
 // dashboard.js
 
-// ===============================
-// SIDEBAR TOGGLE FOR MOBILE
-// ===============================
-const menuBtn = document.getElementById('menuToggle');
-const sidebar = document.getElementById('sidebar');
 
-menuBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
+//Toggle sidebar
+const menuBtn = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
 });
 
 // ===============================
@@ -36,18 +35,6 @@ function updateWelcomeMessage() {
 // Initial call
 updateWelcomeMessage();
 
-// ===============================
-// OPTIONAL: Highlight Active Sidebar Link
-// ===============================
-const sidebarLinks = document.querySelectorAll('.sidebar a');
-const currentPage = window.location.pathname.split('/').pop();
-
-sidebarLinks.forEach(link => {
-    const linkPage = link.getAttribute('href');
-    if (linkPage === currentPage) {
-        link.classList.add('active-link');
-    }
-});
 // Add this to your existing dashboard.js
 const logoutBtn = document.getElementById('logoutBtn');
 
