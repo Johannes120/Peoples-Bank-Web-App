@@ -31,6 +31,23 @@ body {
     transition: transform 0.3s ease;
     z-index: 1000;
 }
+.sidebar {
+    transform: translateX(0); /* default visible on desktop */
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+@media (max-width: 992px){
+    .sidebar {
+        transform: translateX(-100%); /* hidden on mobile initially */
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* shown when toggled */
+    }
+}
 
 .sidebar-nav a {
     display: flex;
@@ -88,18 +105,18 @@ body {
     position: fixed;
     top: 15px;
     left: 15px;
-    background:#646464;
+    background: #646464;
     color: #fff;
     border: none;
     padding: 10px 12px;
     border-radius: 5px;
     cursor: pointer;
-    z-index: 1100;
-    display: none; /* show only on mobile */
+    z-index: 2000; /* higher than sidebar */
+    display: none; /* default hidden */
 }
 
 .menu-btn i {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /* Dashboard Main Content */
