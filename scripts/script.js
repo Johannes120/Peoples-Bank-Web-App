@@ -2,15 +2,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/fireba
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
 
-// Firebase config
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyBkiWhymnICIdCQsZQC-y4E45XRiYQOkio",
+  authDomain: "people-s-bank-web.firebaseapp.com",
+  projectId: "people-s-bank-web",
+  storageBucket: "people-s-bank-web.firebasestorage.app",
+  messagingSenderId: "789021638199",
+  appId: "1:789021638199:web:66201c5b05b9aa5c0f49b2",
+  measurementId: "G-BJXYPBBH1X"
 };
 
 const app = initializeApp(firebaseConfig);
