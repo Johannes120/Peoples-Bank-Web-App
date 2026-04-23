@@ -34,13 +34,6 @@ body {
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-/* HIDE ON DESKTOP (optional but recommended) */
-@media(min-width: 768px){
-    .menu-btn{
-        display: none;
-    }
-}
-
 /* SHOW SIDEBAR ON DESKTOP */
 @media(min-width: 768px){
     .sidebar{
