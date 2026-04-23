@@ -1,11 +1,8 @@
 // dashboard.js
-
-
-//Toggle sidebar
-const menuBtn = document.getElementById("menuToggle");
+const menuToggle = document.getElementById("menuToggle");
 const sidebar = document.getElementById("sidebar");
 
-menuBtn.addEventListener("click", () => {
+menuToggle.addEventListener("click", () => {
     sidebar.classList.toggle("active");
 });
 
@@ -47,3 +44,6 @@ if(logoutBtn){
         window.location.href = 'index.html';
     });
 }
+
+
+
