@@ -1,1 +1,63 @@
+/* Reset & Base */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
 
+body{
+    display:flex;
+    min-height:100vh;
+    background:#f0f0f0;
+    color:#333;
+}
+
+/* Dashboard Main Content */
+.dashboard-main{
+    margin-left:220px;
+    width:calc(100% - 220px);
+    transition:margin-left 0.3s ease;
+}
+
+/* Dashboard Title */
+.topbar .dashboard-title{
+    font-size:24px;
+    color:#545454;
+}
+
+/* Main Content */
+.dashboard-container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+/* Welcome Section */
+.welcome-section{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.welcome-section h1{
+    margin-bottom:15px;
+    color:#505050;
+}
+
+.welcome-section p{
+    font-size:16px;
+    line-height:1.6;
+    color:#555;
+}
+
+/* Video Section */
+.video-section{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.video-section h2{
+    font-size:22px;
+    margin-bottom:15px;
+    color:#605f5f;
+}
