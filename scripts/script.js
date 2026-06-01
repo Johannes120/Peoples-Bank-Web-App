@@ -17,6 +17,12 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
+// CLEAR FORMS WHEN PAGE LOADS
+window.addEventListener("load", () => {
+    document.querySelector("#signinForm form").reset();
+    document.querySelector("#signupForm form").reset();
+});
+
 // FORM TOGGLE
 const signupBtn = document.getElementById("signupBtn");
 const signinBtn = document.getElementById("signinBtn");
@@ -59,31 +65,58 @@ function showAlert(msg, type="error"){
 }
 
 // SIGN UP
-document.querySelector("#signupForm form").addEventListener("submit", (e)=>{
+const signupFormElement = document.querySelector("#signupForm form");
+
+signupFormElement.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const email = document.getElementById("signupEmail").value.trim();
     const password = document.getElementById("signupPassword").value.trim();
     const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-    if(password !== confirmPassword){
+    if (password !== confirmPassword) {
         showAlert("Passwords do not match!", "error");
         return;
     }
 
-    createUserWithEmailAndPassword(auth,email,password)
-    .then(()=>{ showAlert("Account created successfully!", "success"); signinBtn.click(); })
-    .catch(err=>showAlert("Account Already Exists","error"));
+    createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+
+            // Clear signup form
+            signupFormElement.reset();
+
+            showAlert("Account created successfully!", "success");
+
+            // Switch to Sign In tab
+            signinBtn.click();
+        })
+        .catch((err) => {
+            showAlert("Account Already Exists", "error");
+        });
 });
 
+
 // SIGN IN
-document.querySelector("#signinForm form").addEventListener("submit",(e)=>{
+const signinFormElement = document.querySelector("#signinForm form");
+
+signinFormElement.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const email = document.getElementById("signinEmail").value.trim();
     const password = document.getElementById("loginPassword").value.trim();
 
-    signInWithEmailAndPassword(auth,email,password)
-    .then(()=> window.location.href="dashboard1.html")
-    .catch(err=> showAlert(err.message,"error"));
+    signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+
+            // Clear login form
+            signinFormElement.reset();
+
+            // Redirect to dashboard
+            window.location.href = "dashboard1.html";
+        })
+        .catch((err) => {
+            showAlert(err.message, "error");
+        });
 });
 
 // CONTACT POPUP
