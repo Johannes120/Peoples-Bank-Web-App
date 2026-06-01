@@ -17,12 +17,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
-// CLEAR FORMS WHEN PAGE LOADS
-window.addEventListener("load", () => {
-    document.querySelector("#signinForm form").reset();
-    document.querySelector("#signupForm form").reset();
-});
-
 // FORM TOGGLE
 const signupBtn = document.getElementById("signupBtn");
 const signinBtn = document.getElementById("signinBtn");
@@ -64,7 +58,6 @@ function showAlert(msg, type="error"){
     setTimeout(()=>{ alertEl.style.display="none"; },4000);
 }
 
-// SIGN UP
 const signupFormElement = document.querySelector("#signupForm form");
 
 signupFormElement.addEventListener("submit", (e) => {
@@ -80,19 +73,18 @@ signupFormElement.addEventListener("submit", (e) => {
     }
 
     createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
+    .then(() => {
 
-            // Clear signup form
-            signupFormElement.reset();
+        // Clear signup form
+        signupFormElement.reset();
 
-            showAlert("Account created successfully!", "success");
+        showAlert("Account created successfully!", "success");
 
-            // Switch to Sign In tab
-            signinBtn.click();
-        })
-        .catch((err) => {
-            showAlert("Account Already Exists", "error");
-        });
+        // Switch to sign in form
+        signinBtn.click();
+
+    })
+    .catch(err => showAlert("Account Already Exists", "error"));
 });
 
 
@@ -106,17 +98,16 @@ signinFormElement.addEventListener("submit", (e) => {
     const password = document.getElementById("loginPassword").value.trim();
 
     signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
+    .then(() => {
 
-            // Clear login form
-            signinFormElement.reset();
+        // Clear the login form
+        signinFormElement.reset();
 
-            // Redirect to dashboard
-            window.location.href = "dashboard1.html";
-        })
-        .catch((err) => {
-            showAlert(err.message, "error");
-        });
+        // Redirect to dashboard
+        window.location.href = "dashboard1.html";
+
+    })
+    .catch(err => showAlert(err.message, "error"));
 });
 
 // CONTACT POPUP
